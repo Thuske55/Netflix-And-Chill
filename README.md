@@ -1,5 +1,7 @@
 # Netflix-And-Chill
 -- Checking which movies are non english movies
+
+
 SELECT *
 FROM film f
 JOIN language l
@@ -8,13 +10,17 @@ WHERE l.language_id >1 AND f.language_id IS NOT NULL
 ORDER BY l.language_id DESC
 
 -- Checking the average number of movies stars per movie
+
+
 SELECT*
 FROM film_actor fa
 JOIN actor a
 ON fa.actor_id = fa.actor_id
 GROUP BY 2,1
 
--- As most of the data is spread across multiple tabls I had to join all the dots
+-- As most of the data is spread across multiple tables I had to join all the dots
+
+
 USE sakila;
 SELECT
 c.country,
