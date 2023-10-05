@@ -23,8 +23,8 @@ GROUP BY 2,1
 
 USE sakila;
 SELECT
-c.country,
-ci.city,
+c.country AS "Country",
+ci.city AS "City",
 f.title AS "Movie Title",
 ct.name AS "Genre",
 rating,
