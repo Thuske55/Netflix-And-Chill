@@ -1,52 +1,16 @@
-# Netflix-And-Chill
--- Checking which movies are non english movies
+The 1st file is a dashboard created on PowerBi to visualise the below findings (Netflix And Chill V1.pbix)
+The 2nd file is the SQL code used to gather the information from the database used. (Netflix and Chill V1.sql) 
 
 
-SELECT *
-FROM film f
-JOIN language l
-ON f.language_id = l.language_id
-WHERE l.language_id >1 AND f.language_id IS NOT NULL
-ORDER BY l.language_id DESC
+Findings:
+Majority of the movie rentals come from India as they hold 14,7% of the market, this followed by Japan on 11,6% then Taiwan which sits on 7,2%
+Collectively a popular genre throughout is Sports followed by Classics then Drama
+As the most popular genre is family orientated most ratings are PG - 13 
+Overall the average duration 116 mins
+Overall a cost effective movie based on replacement cost VS rental rate is Comedy, Travel and Sports as these have the highest return value
 
--- Checking the average number of movies stars per movie
-
-
-SELECT*
-FROM film_actor fa
-JOIN actor a
-ON fa.actor_id = fa.actor_id
-GROUP BY 2,1
-
--- As most of the data is spread across multiple tables I had to join all the dots
-
-
-USE sakila;
-SELECT
-c.country AS "Country",
-ci.city AS "City",
-f.title AS "Movie Title",
-ct.name AS "Genre",
-rating,
-f.length AS "Movie Duration",
-rental_rate AS "Rental Rate",
-replacement_cost AS "Replacement Cost"
-FROM country c
-JOIN city ci
-USING (country_id)
-JOIN address ad
-USING (city_id)
-JOIN customer cs
-USING (address_id)
-JOIN rental r
-USING (customer_id)
-JOIN inventory i
-USING (inventory_id)
-JOIN film_category fc
-ON i.film_id = fc.film_id
-RIGHT JOIN category ct
-ON fc.category_id = ct.category_id
-JOIN film f
-ON i.film_id = f.film_id
-ORDER BY country 
-
+Recommandations:
+Based on the stats provided the next movie release should be a Classic genre film
+They are perfectly balanced to what the entire world watchs and also have a firm grip on your top 3 coutries that rent out the most movies
+The returns on the movie are slightly behind the top 3 highest generating movie
+They are the perfect duration as they average 117 mins, much shorter than Drama which is 128 mins and Sports that’s 130 mins
