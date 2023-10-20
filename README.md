@@ -1,4 +1,5 @@
 The 1st file is a dashboard created on PowerBi to visualise the below findings (Netflix And Chill V1.pbix)
+
 The 2nd file is the SQL code used to gather the information from the database used. (Netflix and Chill V1.sql) 
 
 
