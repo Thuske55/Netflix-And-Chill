@@ -2,6 +2,7 @@ The 1st file is a dashboard created on PowerBi to visualise the below findings (
 
 The 2nd file is the SQL code used to gather the information from the database used. (Netflix and Chill V1.sql) 
 
+Please click on "view code" to see the above mentioned 
 
 Findings:
 Majority of the movie rentals come from India as they hold 14,7% of the market, this followed by Japan on 11,6% then Taiwan which sits on 7,2%
